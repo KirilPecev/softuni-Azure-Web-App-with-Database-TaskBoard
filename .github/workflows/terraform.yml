@@ -102,7 +102,7 @@ jobs:
     # An exit code of 0 indicated no changes, 1 a terraform failure, 2 there are pending changes.
     - name: Terraform Plan
       id: tf-plan
-      run: terraform plan -var-file="values.tfvars"
+      run: terraform plan -var-file="values.tfvars" -out tfplan
         
     # Save plan to artifacts  
     - name: Publish Terraform Plan
