@@ -47,7 +47,7 @@ resource "azurerm_linux_web_app" "webapp" {
   connection_string {
     name  = "DefaultConnection"
     type  = "SQLAzure"
-    value = "Data Source=tcp:${azurerm_mssql_server.sql.name},1433;Initial Catalog=${azurerm_mssql_database.db.name};UserID=${azurerm_mssql_server.sql.administrator_login};Password=${azurerm_mssql_server.sql.administrator_login_password};Trusted_Connection=False;MultipleActiveResultSets=True;"
+    value = "Data Source=tcp:${azurerm_mssql_server.sql.fully_qualified_domain_name},1433;Initial Catalog=${azurerm_mssql_server.sql.name};UserID=${azurerm_mssql_server.sql.administrator_login};Password=${azurerm_mssql_server.sql.administrator_login_password};Trusted_Connection=False;MultipleActiveResultSets=True;"
   }
 }
 
